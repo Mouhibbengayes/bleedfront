@@ -1,0 +1,19 @@
+<div class="main-container" >
+  <div class="sidebar_mobile" >
+    <div class="toggle_menu" (click)="openMenu()">
+      <i id="toggleMenu" class="bi bi-list"></i>
+      <i id="closeMenu" style="display:none" class="bi bi-x-circle"></i>
+    </div>
+    <div class="sidebar_logo pointer" >
+      <img src="../../../assets/imgs/base logo copie.png" class="gen_mobile_img_contain" [routerLink]="['/home']">
+    </div>
+    <div class="toggle_cart">
+      <i routerLink="/cart" class="bi bi-cart">({{countItems}})</i>
+    </div>
+  </div>
+  <app-sidebar id="sidebar" class="sidebar hide" *ngIf="showSidebar"></app-sidebar>
+  <div id="wrapper" class="wrapper">
+    <router-outlet></router-outlet>
+    <ng-toast></ng-toast>  
+  </div>
+</div>

@@ -1,0 +1,461 @@
+
+  
+  .scroll-wrapper{
+    margin-left:10%;
+  }
+  
+  .big-logo-container {
+    margin-top: 50px;
+    width: 80%;
+    height: 600px; /* Increase the height to make it larger */
+    padding: 0% 0% 0% 14%;
+    position: relative; /* Add position relative */
+  }
+  
+  .gen_img_containvideo {
+    width: 125%; /* Make the video fill its container */
+    height: 120%; /* Make the video fill its container */
+    object-fit: cover; /* Maintain aspect ratio */
+    position: absolute; /* Position the video */
+    top: 50%; /* Position video at the center */
+    left: 50%; /* Position video at the center */
+    transform: translate(-50%, -50%);
+  }
+  
+  .scroll_img_container1 {
+    width: 65%;
+  height: 45%;
+  position: absolute;
+  left: 587px;
+  top: 315px;
+  }
+  
+  .scroll_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .scroll_img_tear_container{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 98%;
+    top:-5%;
+  }
+  .scroll_img_tear {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: contain;
+    transition: transform 2s ease, opacity 2s ease;
+    top: -50px;
+  }
+  
+  .scroll_img_stitch{
+    width: 150%;
+    height: 285%;
+    position: relative;
+    top: 400px;
+    object-fit: contain;
+    right: 560% !important;
+  }
+  
+  
+  
+  .desc-container{
+    padding-top:160px;
+    margin-left:20px;
+  }
+  
+  /* Styles for the desc-title element */
+  .desc-title {
+    font-family: medium;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 35px;
+    line-height: 1em;
+    margin: 26px 0px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 50%;
+    position: relative;
+    top: -37px;
+    opacity: 0;
+    transition: 1s all ease;
+    left: -100px;
+    color: #0066ff;
+  }
+  
+.bleed-logo {
+  font-size: 40px; /* Adjust font size as needed */
+}
+
+.kotra-image {
+  position: absolute;   
+  width: 14%;  
+  height: auto;   
+  top: 26px;   
+  left: 4%;   
+  transform: translateX(-50%);
+}
+
+.new-arrivals {
+  display: block;
+  margin-top: 13px;
+  margin-left: 45px;
+}
+
+  
+  
+  .desc-title.active {
+    opacity: 1; /* Show the element when active */
+  }
+  
+  .desc-phrase {
+    font-family: medium;
+    font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 14px;
+  line-height: 1,1em;
+  word-spacing: 1px;
+  margin: 25px 0px;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 65%;
+  position: relative;
+  top: -54px;
+  opacity: 0;
+  transition: 0s all ease;
+  left: -192px;
+
+    
+  }
+  
+  .desc-phrase.active {
+    opacity: 1; /* Show the element when active */
+  }
+  
+  .desc-word{
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -4%;
+    font-weight: 400;
+    letter-spacing: 4px;
+    z-index: 1;
+    opacity: 0;
+    transition: 1s all ease;
+    font-family: medium;
+  }
+  
+  .desc-word.active {
+    opacity: 1; /* Show the element when active */
+  }
+  
+  
+  .primary-elements{
+    width: 90%;
+    display: inline-block;
+    padding-left: 7%;
+    margin-top: 50px;
+  }
+  
+  .element{
+    display: inline-block;
+    width:200px;
+    height:400px;
+    margin-right:80px;
+    vertical-align: top;
+  }
+  
+  .elem_img{
+    position: relative;
+    width:100%;
+    height:60%;
+    outline:1px solid #0066ff;
+    box-shadow:0px 0px 20px 5px rgba(0, 0, 255, .2);
+  }
+  .gen_img_contain{
+    height: 100%;
+  margin: -34px 0px;
+  width: 100%;
+
+  }
+  .back-image {
+  position: absolute;
+  top: 33px;
+  left: -30px;
+  }
+  
+  .back-image {
+    opacity: 0;
+  }
+  .elem_img:hover .back-image {
+    opacity: 1;
+  }
+  
+  .elem_title{
+    margin-top:10%;
+    text-align: center;
+    padding:0% 10%;
+    font-weight: 900;
+    font-size: 16px;
+  }
+  
+  .elem_price{
+    margin-top:5%;
+    text-align: center;
+    padding:0% 10%;
+    font-size: 14px;
+    color:rgba(0,0,0,0.5);
+    transition: color 0.4s; /* Add transition for smooth color change */
+    transition: font-weight 0.4s; /* Add transition for smooth color change */
+  
+  }
+  .element:hover .elem_price {
+    color: #0066ff;
+  }
+  /* CSS for discount label */
+  .discount-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: blue; /* Change color as needed */
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  .outofstock-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red; /* Change color as needed */
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  /* CSS for prices */
+  .original-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 5px;
+    font-weight: lighter;
+  }
+  
+  .discounted-price {
+    font-weight: bold;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .reveal{
+    position: relative;
+    transform: translateX(150px);
+    opacity: 0;
+    transition: 3s all ease;
+  }
+  
+  .revealTear {
+    transform: scale(0.2); /* Initial smaller size */
+    opacity: 0; /* Initially hidden */
+  }
+  .revealStitch{
+    position: relative;
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .revealTear.active {
+    transform: scale(1); /* Larger size */
+    opacity: 1; /* Reveal element */
+  }
+  
+  .revealStitch.active{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  /* Hide backside image by default */
+  .back-image {
+    display: none;
+    width:128%;
+    height:113%;
+    object-fit: contain;
+    transition: opacity 0.5s ease;
+  }
+  
+  /* Show backside image on hover */
+  .elem_img:hover .gen_img_contain {
+    opacity: 0;
+  }
+  
+  .elem_img:hover .back-image {
+    display: block;
+    opacity: 1;
+  }
+  
+#qodef-back-to-top.rotated .qodef-svg--back-to-top,
+#qodef-back-to-top.rotated:hover .qodef-svg--back-to-top {
+  transform: rotate(180deg);
+   /* Add this line to set the arrow color to blue */
+}
+
+#qodef-back-to-top {
+  bottom: 94px;
+  height: 39px;
+  margin: 0;
+  opacity: 0;
+  position: fixed;
+  right: 86px;
+  visibility: hidden;
+  width: 50px;
+  z-index: 10000;
+  transform: rotate(180deg);
+  fill: blue;
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-back-to-top {
+    bottom: 45px;
+    right: 45px;
+  }
+}
+
+#qodef-back-to-top .qodef-back-to-top-icon {
+  align-items: center;
+  color: blue;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  transition: color 0.2s ease-out;
+}
+
+#qodef-back-to-top .qodef-back-to-top-icon * {
+  display: block;
+  line-height: inherit;
+}
+
+#qodef-back-to-top svg {
+  transition: transform 0.4s cubic-bezier(0.39, 0.1, 0, 0.98);
+}
+
+#qodef-back-to-top:hover .qodef-back-to-top-icon svg {
+  transform: translateY(-8px);
+}
+
+#qodef-back-to-top.qodef--off {
+  opacity: 0;
+  transition: opacity 0.15s ease, visibility 0s 0.15s;
+  visibility: hidden;
+}
+
+#qodef-back-to-top.qodef--on {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  visibility: visible;
+}
+
+
+  @media only screen and (max-width: 600px) {
+    .scroll-wrapper {
+      margin-left: 0%;
+    }
+    .scroll_img_container1 {    
+      left: 56%;
+      top: 110px;
+    }
+    .desc-container {    
+      margin-left: 10%;
+      padding-top: 20px;
+    }
+    .desc-title {
+      max-width: unset;
+      left: 0px;
+      font-size: 22px;
+  }
+  .desc-word {
+  top: 666px;
+  font-size: 11px;
+  left: -1%;
+  }
+  .desc-phrase{
+    max-width: unset;
+    left: 0px;
+    font-size: 16px;
+    top: -77px;
+    }
+  .primary-elements{    
+    width: 100%;
+    margin-top: -10px;
+    text-align: center;
+    padding-left: 5%;
+  }
+  .element {
+    width: 145px;
+    height: 285px;
+    margin-right: 35px;
+    margin-top: 20px;
+  }
+  .gen_img_containvideo{
+    left: 57%;
+  }
+  .gen_img_contain{
+    width: 100%;
+    height: 100%;
+    margin: -25px !important;
+    padding-top: 0px;
+    padding-left: 26px;
+  }
+  .discount-label {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  .outofstock-label {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  .bleed-logo {
+    font-size: 30px;
+    }
+    .new-arrivals {
+    margin-top: 5px;
+    margin-left: 30px;
+    }
+    .kotra-image {
+    width: 12%;
+    top: 20px;
+    }
+    
+}

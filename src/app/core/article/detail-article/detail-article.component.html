@@ -1,0 +1,79 @@
+<div id="signin_modal" class="modal">
+  <div class="modal_title">
+    <button class="modal_btn btnModal" id="modal_btn" (click)="switchConnectionType()"></button>
+    <button class="close_btn btnModal" (click)="closeModal()">X</button>
+  </div>
+  <div class="modal_body">
+    <div class="modal_image">
+      <img src="../../../assets/imgs/big-logo-bleed.png" class="modal_img">
+    </div>
+    <div class="modal_form">
+      <input type="text" placeholder="Email" name="email" [(ngModel)]="user.email">
+      <input type="password" placeholder="*****" name="mdp" [(ngModel)]="user.mdp">
+      <button class="modal_btn btn" id="action_btn" style="margin-top:40px;" (click)="formAction()"></button>
+    </div>
+  </div>
+</div>
+<!-- END MODAL -->
+<div class="main_wrapper">
+  <div class="image_side">
+    <div class="image_container">
+      <img [src]="getImageUrl()" class="article_image">
+      <div class="arrow left" (click)="navigateImage(-1)">&lt;</div>
+      <div class="arrow right" (click)="navigateImage(1)">&gt;</div>
+    </div>
+  </div>
+  
+  
+  <div class="order_info">
+    <div class="title">
+       {{item?.nomItem}}
+    </div>
+    <div class="price">
+      <span *ngIf="item.discountPercentage > 0">{{ item.discountedPrice }} TND</span>
+      <span *ngIf="item.discountPercentage <= 0">{{ item.itemPrice }} TND</span>
+    </div>
+    
+    <div class="reward_price">
+      <img src="../../../../assets/imgs/kotra.png" class="ss_icon">
+      <span class="reward_txt">
+        There's <b>{{item?.stock}}</b>  <b> Left in the stock !</b>
+      </span>
+    </div>
+    <div class="reward_price">
+      <img src="../../../../assets/imgs/kotra.png" class="ss_icon">
+      <span class="reward_txt">
+        <b>{{item?.descItem}}</b>
+      </span>
+    </div>
+
+    <div class="size-info">
+      <label for="size" class="gen_txt">SIZE</label>
+      <select class="select_size" id="size" [(ngModel)]="selectedSize">
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M" selected>M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+      </select>
+    </div>
+    <div class="order_wrapper">
+      <div class="item_info">
+        <table class="item_counter">
+          <tr>
+            <td rowspan="2" class="item_number">{{orderSize}}</td>
+            <td class="plus pointer" (click)="incrementOrder()">+</td>
+          </tr>
+          <tr>
+            <td class="minus pointer" (click)="decrementOrder()">-</td>
+          </tr>
+        </table>
+      </div>
+      <div class="add_btn_container">
+        <button class="add_btn" [disabled]="item?.stock === 0" (click)="validateCart();addToCart()" (mouseenter)="showBannedIcon()" (mouseleave)="hideBannedIcon()" >ADD TO CART</button>
+    </div>
+  </div>
+  &#9825;
+
+</div>

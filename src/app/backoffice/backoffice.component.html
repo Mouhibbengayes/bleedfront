@@ -1,0 +1,103 @@
+<div class="navigation-box">
+  <div class="navigation">
+    <button class="nav-button" (click)="navigateTo('command')">Command Section</button>
+    <div class="divider"></div>
+    <button class="nav-button" (click)="navigateTo('addProduct')">Add Product Section</button>
+  </div>
+</div>
+
+<div *ngIf="selectedSection === 'command'" class="section">
+  <h2>Command Section</h2>
+  
+<div class="table-container">
+  <table>
+      <thead>
+        <tr>
+          <th>Date Command</th>
+          <th>Gouvernerant</th>
+          <th>Full Name</th>
+          <th>Phone</th>
+          <th>Total Price</th>
+          <th>Ville</th>
+          <th>Item Name</th>
+          <th>Size</th>
+          <th>Quantity</th>
+          <th>Cross</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let command of pagedCommands"  >
+          <tr [class.crossed-out]="command.isChecked" *ngIf="command.cartItems && command.cartItems.length > 0">          <!-- Display command details in the first row -->
+            <td [attr.rowspan]="command.cartItems.length + 1">{{ command.dateCommand }}</td>
+            <td [attr.rowspan]="command.cartItems.length + 1">{{ command.gouvernerant }}</td>
+            <td [attr.rowspan]="command.cartItems.length + 1">{{ command.fullName }}</td>
+            <td [attr.rowspan]="command.cartItems.length + 1">{{ command.phone }}</td>
+            <td [attr.rowspan]="command.cartItems.length + 1">{{ command.totalPrice }}</td>
+            <td [attr.rowspan]="command.cartItems.length + 1">{{ command.ville }}</td>
+          </tr>
+          <tr *ngFor="let item of command.cartItems" >
+            <!-- Display each item details in subsequent rows -->
+            <td>{{ item.itemName }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+              <button (click)="toggleCrossedOut(command)" >✔️</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">&laquo; Prev</button>
+      <button *ngFor="let page of pages" [class.active]="currentPage === page" (click)="setCurrentPage(page)">
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === pages.length">Next &raquo;</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedSection === 'addProduct'" class="section-container">
+  <div class="section-box">
+  <h2>Add Product Section</h2>
+  <form (ngSubmit)="addProduct()">
+    <label for="idItem">ID:</label>
+    <input type="text" id="idItem" name="idItem" [(ngModel)]="product.idItem" required><br><br>
+
+    <label for="nomItem">Name:</label>
+    <input type="text" id="nomItem" name="nomItem" [(ngModel)]="product.nomItem" required><br><br>
+
+    <label for="descItem">Description:</label>
+    <input type="text" id="descItem" name="descItem" [(ngModel)]="product.descItem" required><br><br>
+
+    <label for="itemPrice">Price:</label>
+    <input type="number" id="itemPrice" name="itemPrice" [(ngModel)]="product.itemPrice" required><br><br>
+
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" [(ngModel)]="product.stock" required><br><br>
+
+    <label for="stock">DiscountPercentage:</label>
+    <input type="number" id="discountPercentage" name="discountPercentage" [(ngModel)]="product.discountPercentage" required><br><br>
+
+
+    <button type="submit">Add Product</button>
+  </form>
+  </div>
+
+  <div class="section-box">
+  <h2>Apply Discount to an article</h2>
+  <form (ngSubmit)="applyDiscount()">
+    <label for="idItem">ID:</label>
+    <input type="text" id="idItem" name="idItem" [(ngModel)]="discountRequest.itemId" required><br><br>
+
+    <label for="nomItem">DiscountPercentage:</label>
+    <input type="text" id="discountPercentage" name="discountPercentage" [(ngModel)]="discountRequest.discountPercentage" required><br><br>
+
+    <button type="submit">Apply Discount</button>
+  </form>
+</div>
+</div>
+
+
+
+  

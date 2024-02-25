@@ -1,0 +1,82 @@
+
+.modal{
+    display: none;
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    min-height: 356px;
+    left: 21%;
+    top: 20%;
+    background: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    outline: 1px solid #0066ff;
+  }
+  
+  .modal_title{
+    width:100%;
+    height:44px;
+    text-align: center;
+  }
+  
+  .modal_body{
+    width:100%;
+    padding:25px;
+    display: inline-block;
+  }
+  
+  .modal_image{
+    display: inline-block;
+    width: 30%;
+  }
+  
+  .modal_img{
+    width:100%;
+    object-fit: contain;
+  }
+  
+  .modal_form{
+    padding-top:40px;
+    display: inline-block;
+    width: 67%;
+    float:right;
+    text-align: center;
+    border-left: 1px solid #0066ff;
+  }
+  
+  .modal_btn{
+    float:unset!important;
+    font-size: 13px !important;
+    font-family: "Rubik",sans-serif!important;
+    font-weight: 600!important;
+    padding: 10px 40px 11px 40px!important;
+    height: 44px!important;
+  }
+  
+  .close_btn{
+    border-radius: 0px 15px 0px 0px;
+    font-size: 13px !important;
+    font-family: "Rubik",sans-serif!important;
+    font-weight: 600!important;
+    padding: 10px 40px 11px 40px!important;
+    height: 44px!important;
+  }
+  
+  input{
+    padding-left:20px;
+    height:44px;
+    width:80%;
+    margin-bottom:15px;
+    border-radius: 0px;
+    border: transparent;
+    outline: 1px solid #0066ff;
+    color:black;
+    font-weight: 500;
+    font-family: "Rubik",sans-serif;
+    font-size:14px;
+  }
+  
+  input:focus{
+    box-shadow: 0px 0px 5px 1px #0066ff;
+  }

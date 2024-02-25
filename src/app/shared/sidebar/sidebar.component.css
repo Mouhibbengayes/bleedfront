@@ -1,0 +1,195 @@
+.scroll_img_container{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: width 2s, height 2s;
+}
+
+.scroll_img_container.loaded {
+  position: absolute;
+  height:20%;
+  width: 100%;
+  bottom:5%;
+  left:5%;
+  z-index: 10;
+}
+
+.scroll_img_container .scroll_img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+
+
+
+.sidebar-wrapper{
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10% 10%;
+  background-color: #0048ff;
+  background-image: url('../../../assets/imgs/BG.png');
+  background-size: 290% 160%;
+  background-position: center;
+  background-position-x: center;
+  background-position-x: 55%;
+  background-position-y: 60%;
+  
+}
+
+.logo-container{
+  height:20%;
+  width:100%;
+  padding:10% 0%;
+}
+
+.menu{
+  display:block;
+  padding-top:50px;
+}
+
+.nav-element {
+  padding: 10px;
+  margin-left: 5%;
+  display: block;
+  width: 100%;
+  font-family: medium;
+  font-size: 14px;
+  line-height: 2em;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+
+.hover-underline-animation {
+  position: relative;
+  text-decoration: none;
+  background: white;
+  -webkit-background-clip: text!important;
+  -webkit-text-fill-color: transparent!important;
+}
+
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: -8px;
+  left: 0;
+  background: white ;
+  transform-origin: bottom left;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-out;
+  background: -webkit-linear-gradient(45deg,#ffffff, rgb(12, 91, 210))!important; 
+
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.nav-element_2 {
+  padding: 10px;
+  margin-left: -6%;
+  display: block;
+  width: 100%;
+  font-family: medium;
+  font-size: 16px;
+  line-height: 3em;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* Style the line under the text */
+.nav-element_2 .hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: -8px;
+  left: 0;
+  background: white;
+  transform-origin: bottom left;
+  transform: scaleX(1); /* Show the line by default */
+  background: -webkit-linear-gradient(45deg, #ffffff, rgb(12, 91, 210)) !important;
+}
+
+/* Remove the hover effect for .nav-element_2 */
+.nav-element_2:hover .hover-underline-animation::after {
+  transform: scaleX(1); /* Ensure line is always visible on hover */
+}
+
+.nav-element_3 {
+  padding: 14px;
+    padding-top: 14px;
+  padding-top: 10px;
+  font-family: Rubik , sans-serif !important;
+  margin-left: -6%;
+  display: block;
+  width: 138%;
+  font-size: 9px;
+  line-height: 1em;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 105px;
+}
+
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left:-30px; /* Adjust the spacing between text and icons */
+}
+
+/* Styles for the icons */
+.icon {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 12px; /* Adjust spacing between icons */
+}
+
+
+.dropdown-item {
+  display: block;
+  font-weight: normal;
+  color: white;
+}
+
+.dropdown-item:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-element_3 {
+    padding: 14px;
+      padding-top: 14px;
+    padding-top: 10px;
+    font-family: Rubik , sans-serif !important;
+    margin-left: -6%;
+    display: block;
+    width: 138%;
+    font-size: 9px;
+    line-height: 1em;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 230px;
+  }
+}

@@ -1,0 +1,72 @@
+
+<div class="main-wrapper">
+  <div class="big-logo-container">
+    <video id="vid" class="gen_img_containvideo" preload="auto"  autoplay loop  playsinline >
+      <source src="../../../../assets/imgs/BLEED.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+  
+
+  <div class="scroll-wrapper">
+
+    <div class="scroll_img_container1 ">
+      <img src="../../../../assets/imgs/SEKINA.png" id="knife" class="scroll_img ">
+    </div>
+    <div class="scroll_img_container ">
+      <!--<img src="../../../../assets/imgs/stitch.png" id="Stitch" class="scroll_img_stitch revealStitch"> -->
+    </div>
+    <div class="desc-container">
+      <p class="desc-word" id="Shop" [ngClass]="{ 'active': isShopVisible }">
+        SHOP
+      </p>
+      <div class="desc-title" id="Title" [ngClass]="{ 'active': isTitleVisible }">
+        <span class="bleed-logo">BLEED</span>
+        <img src="../../../../assets/imgs/BLEED KOTRA copie 2.png" class="kotra-image">
+        <br class="mobile-break">
+        <span class="new-arrivals">NEW ARRIVALS</span>
+        <div class="scroll_img_tear_container">
+          <!-- Other content inside the container -->
+        </div> 
+      </div>
+      
+      
+
+    <p class="desc-phrase" id="Phrase" [ngClass]="{ 'active': isPhraseVisible }">
+      Bleed is a dynamic Tunisian streetwear brand known for its innovative designs, reflecting a fusion of cultural influences, and its commitment to sustainable fashion practices
+    </p>
+    </div>
+
+    <div class="primary-elements">
+      <div class="element pointer" (click)="navigateToArticle(item.idItem)" *ngFor="let item of filteredItems">
+        <div class="elem_img">
+          <img src="../../../../assets/imgs/{{item?.idItem}}.png" class="gen_img_contain" alt="Front Image" (mouseover)="showBackside($event)" (mouseleave)="hideBackside($event)">        
+          <img src="../../../../assets/imgs/{{item?.idItem}}-1.png" class="gen_img_contain back-image" alt="Backside Image">
+          <div *ngIf="item.discountPercentage > 0" class="discount-label">{{ item.discountPercentage }}% OFF</div>
+          <div *ngIf="item.stock <= 0" class="outofstock-label">Out of Stock</div>
+        </div>
+        <div class="elem_title">
+          {{item?.nomItem}}
+        </div>
+        <div class="elem_price">
+          <span *ngIf="item.discountPercentage > 0" class="discounted-price">
+            <del class="original-price">{{ item.itemPrice }} TND</del> {{ item.discountedPrice }} TND
+          </span>
+          <span *ngIf="item.discountPercentage <= 0" class="discounted-price">
+            {{ item.itemPrice }} TND
+          </span>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <a id="qodef-back-to-top"  class="qodef--predefined qodef--on" [class.rotated]="isArrowRotated" (click)="onArrowClick()">
+    <span class="qodef-back-to-top-icon">
+      <svg class="qodef-svg--back-to-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49.7" height="38.9" viewBox="0 0 49.7 38.9"><path d="M0 38.9 24.9 0l24.8 38.9Zm24.8-24.1L14.6 30.9h20.5Z"></path></svg>	</span>
+  </a>
+</div>
+
+

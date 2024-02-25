@@ -1,0 +1,166 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.section {
+  text-align: center; /* Center align content within this section */
+}
+
+.section-container {
+  display: flex;
+  gap: 20px; /* Gap between the two section boxes */
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-start; /* Align items at the top */
+  margin-left: 0%; /* Adjust for the sidebar width */
+}
+
+/* Style for the section boxes */
+.section-box {
+  flex: 1;
+  padding: 55px;
+  border: 2px solid blue; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  background-color: white; /* Background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  max-width: 430px; /* Set a maximum width for the boxes */
+}
+
+.section-box h2 {
+  margin-bottom: 15px; /* Margin for section titles */
+}
+
+.section-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-box form label {
+  margin-bottom: 10px; /* Spacing between labels */
+}
+
+.section-box form input,
+.section-box form button {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.section-box form button {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.section-box form button:hover {
+  background-color: #0066ff;
+}
+
+.navigation-box {
+  border: 3px solid blue; /* Blue outline */
+  padding: 20px; /* Add padding for some space around the content */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-button {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
+}
+
+.nav-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.divider {
+  height: 50px;
+  width: 3px;
+  background-color: blue;
+}
+
+
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid blue;
+  padding: 12px;
+  text-align: left;
+}
+
+.table-container th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.crossed-out {
+  text-decoration: line-through;
+  text-decoration-color: crimson;
+  text-decoration-thickness: 2px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 2px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

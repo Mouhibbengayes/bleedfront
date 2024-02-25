@@ -1,0 +1,65 @@
+
+<div class="welcome_wrapper">
+  <div class="ww_text">
+    <h1>CART</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="cart_wrapper">
+    <table style="width: 100%;">
+      <tr style="line-height: 42px;">
+        <th></th>
+        <th colspan="2" style="text-align:center;">PRODUCT</th>
+        <th>PRICE</th>
+        <th>QTE</th>
+        <th class="move-left">SIZE</th>
+        <th>SUB-TOTAL<br></th>
+      </tr>
+      <tr *ngFor="let cartItem of listCartItems">
+        <td>
+          <span></span>
+          <span></span>
+        </td>
+        <td style="width: 7.5%;">
+          <img src="../../../assets/imgs/{{cartItem?.idItem}}.png" class="item-img-cart">
+        </td>
+        <td>{{cartItem?.nomItem}}</td>
+         <td>
+          <span *ngIf="cartItem.discountedPrice && cartItem.discountedPrice !== 0">
+            <del>{{ cartItem.itemPrice }} TND</del>
+            {{ cartItem.discountedPrice }} TND
+          </span>
+          <span *ngIf="!cartItem.discountedPrice || cartItem.discountedPrice === 0">
+            {{ cartItem.itemPrice }} TND
+          </span>
+        </td>
+        <td>{{cartItem?.quantity}}</td>
+        <td>{{cartItem?.size}}</td>
+        <td>{{ (cartItem.discountedPrice ? cartItem.discountedPrice : cartItem.itemPrice) * cartItem.quantity }} TND</td>
+      </tr>
+
+      <tr *ngIf="listCartItems.length==0">
+        <td colspan="6" style="text-align:center;">Cart is empty.</td>
+      </tr>
+    </table>
+    <button class="btn" (click)="cleanCart()">Clean Cart</button>
+  </div>
+  <div class="checkout_wrapper" *ngIf="listCartItems.length!=0">
+    <p class="title"><b><h1>TOTAL CART</h1></b></p>
+    <table style="margin-top:0px; margin-bottom:20px; width:100%;">
+      <tr>
+        <td><b>SUB-TOTAL</b></td>
+        <td>{{cart?.totalPrice}} TND</td>
+      </tr>
+      <tr>
+        <td><b>SHIPPING</b></td>
+        <td>Shipping costs are the same : <br> 8.00TND</td>
+      </tr>
+      <tr>
+        <td><b>TOTAL</b></td>
+        <td>{{cart?.totalPrice+8}}  TND</td>
+      </tr>
+    </table>
+    <button class="validate_btn btn1" (click)="validateCart()">Validate Cart</button>
+  </div>
+</div>

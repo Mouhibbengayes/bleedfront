@@ -1,0 +1,95 @@
+<div class="welcome_wrapper">
+  <div class="ww_text">
+    <h1>CHECKOUT PHASE</h1>
+  </div>
+</div>
+
+
+
+<div class="container">
+
+
+  <div class="return_card" id="return_card">
+    <div class="card_txt">
+      <h3>Return Policy</h3>
+    </div>
+    <span class="close_card_span" id="return_card_span" (click)="removeElement(0)">X</span>
+  </div>
+  <div class="payment_card" id="payment_card">
+    <div class="card_txt">
+      <h3>Pay when shipped</h3>
+      <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h6>
+    </div>
+    <span class="close_card_span" id="payment_card_span" (click)="removeElement(1)">X</span>
+  </div>
+
+
+  <div class="form_container">
+    <h1>SHIPPING DETAILS</h1>
+    <div class="input-group">
+      <label for="name" class="label_input" required>
+        <input type="text" placeholder="Nom Complet" name="name" [(ngModel)]="userCheckout.name" >
+      </label>
+    </div>
+    <div class="input-group">
+      <select [(ngModel)]="userCheckout.gouvernorat" name="gouvernorat" class="blue-bordered-box" required>
+        <option value="" disabled selected>Select your gouvernorat</option>
+        <option *ngFor="let city of tunisianCities" [value]="city">{{ city }}</option>
+      </select>         
+    </div>
+    <div class="input-group">
+      <label for="name" class="label_input">
+        <input type="text" placeholder="City" name="City" [(ngModel)]="userCheckout.ville" required>
+      </label>    
+    </div>
+    <div class="input-group">
+      <label for="name" class="label_input">
+        <input type="text" placeholder="Phone Number" name="phone" [(ngModel)]="userCheckout.phone" (input)="formatPhoneNumber($event)" required>
+      </label>
+    </div>
+    <div class="checkout_btn_element">
+      <button class="checkout_btn btn" (click)="checkout()" >CHECKOUT</button>
+    </div>
+  </div>
+  
+
+
+
+  <div class="details_container">
+    <div class="cart_wrapper">
+      <table>
+        <tr style="line-height: 42px;">
+          <th colspan="2" style="text-align:center;">PRODUIT</th>
+          <th>PRICE</th>
+          <th>QUANTITE</th>
+        </tr>
+        <tr *ngFor="let cartItem of listCartItems">
+          <td style="width: 17%;">
+            <img src="../../../assets/imgs/{{cartItem?.idItem}}.png" class="item-img-cart">
+          </td>
+          <td>{{cartItem?.nomItem}}</td>
+          <td>{{cartItem?.itemPrice}}TND</td>
+          <td>{{cartItem?.quantity}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="checkout_wrapper">
+      <p class="title"><b><h1>TOTAL CART</h1></b></p>
+      <table style="margin-top:0px; margin-bottom:20px; width:100%;">
+        <tr>
+          <td><b>SUB-TOTAL</b></td>
+          <td>{{cart?.totalPrice}} TND</td>
+        </tr>
+        <tr>
+          <td><b>SHIPPING</b></td>
+          <td>lorem ipsum a shindayro noni.<br> 8.00TND</td>
+        </tr>
+        <tr>
+          <td><b>TOTAL</b></td>
+          <td>{{cart?.totalPrice+8}}  TND</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
